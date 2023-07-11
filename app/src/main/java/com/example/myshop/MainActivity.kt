@@ -33,8 +33,8 @@ class MainActivity : AppCompatActivity() {
                 if (response.isSuccessful){
                     var product = response.body()?.products
                     var productAdapter=ProductAdapter(product?: emptyList())
-                    binding.rvProduct.layoutManager=GridLayoutManager(this@MainActivity,2)
-//                    binding.rvProduct.layoutManager=LinearLayoutManager(this@MainActivity)
+//                    binding.rvProduct.layoutManager=GridLayoutManager(this@MainActivity,2)
+                    binding.rvProduct.layoutManager=LinearLayoutManager(this@MainActivity)
                     binding.rvProduct.adapter=productAdapter
                     Toast.makeText(baseContext,
                         "fetched ${product?.size} product" ,Toast.LENGTH_LONG).show()
